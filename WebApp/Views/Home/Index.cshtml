@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Employee Directory";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <label for="searchBar">Search for Employees</label>
+    <input type="text" name="searchBar" id="searchBar" placeholder="Enter Employee Name or City">
+</div>
+<div id="directory">
+    <ul class="grid"></ul>
+    <p class="message">"Sorry No Results Found"<p>
+</div>
+<div id="lightbox">
+    <div class="selected">
+        <div class="cardExpand cardTextExpand selectedCard">
+
+        </div>
+        <div class="arrows">
+            <p class="arrowBack">&#60;</p>
+            <p class="counter"></p>
+            <p class="arrowForward">&#62;</p>
+        </div>
+    </div>
+</div>
+
