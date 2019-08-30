@@ -81,63 +81,35 @@ let saveButton = document.getElementsByClassName('save')[0];
 let cancelButton = document.getElementsByClassName('cancel')[0];
 let timeZone = document.getElementsByTagName('select')[0];
 
-//-------Flash Alert Listener--------//
 
-flashAlert.addEventListener('click', function(){
-  flashAlert.style.display = 'none';
-});
-
-//-------Notification Listener & Drop Menu------//
-counter = 3;
-noticeNumber.innerHTML = counter;
-
-alertManager.addEventListener('click', function(){
-    if (dropMenu.style.display == 'none') {
-      dropMenu.style.display = 'block';
-      }
-     else {
-      dropMenu.style.display = 'none';
-    }
-});
-
-dropMenu.addEventListener('click', function(e){
-  for (let i = 0; i< alert.length; i++){
-      if (alert[i] == e.target){
-        e.target.style.display = 'none';
-        counter = counter - 1;
-        noticeNumber.innerHTML = counter;
-      }
-      if (counter === 0) {
-        noticeNumber.style.display = 'none';
-      }
-      // else {
-      //   e.target.style.display = 'none';
-      // }
-    }
-  });
+//------Call Charts onLoad-----------//
+window.onload = function () {
 
 
 //------Daily Traffic Bar Chart-----------//
 const dailyBarChart = document.getElementById('dailyTraffic');
-var dailyTraffic = new Chart(dailyBarChart, {
-  type: 'bar',
-  data: {
-    labels: days,
-    datasets: [
-      {
-        data: traffic,
-        borderColor: '#7979d2', //purple
-        backgroundColor: '#7979d2', //purple
-        fill: true,
-      }
-    ]
-  },
-  options: {
-    legend: {
-      display: false,
-    }
-  }
-});
+    var dailyTraffic = new Chart(dailyBarChart, {
+        type: 'bar',
+        data: {
+            labels: days,
+            datasets: [
+                {
+                    data: traffic,
+                    borderColor: '#7979d2', //purple
+                    backgroundColor: '#7979d2', //purple
+                    fill: true,
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false,
+            }
+        }
+    });
+
+   
+
 
 //------Mobile Users Donught Chart-----------//
 
@@ -385,6 +357,8 @@ timechart.addEventListener('click', function(e){
       mainTrafficMonthly.style.display = 'block';
     }
 });
+
+};
 
 
 //-------Message Sent Notification-----//

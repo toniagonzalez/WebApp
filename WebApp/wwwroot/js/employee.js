@@ -209,12 +209,13 @@ function expandText(data) {
 //-------Open Lightbox on click of profile card------//
 
 ul.on('click', 'li', function(e) {
-              currentIndex = $('li').index(this);
-              cardExpand.html(cardExpandText[currentIndex]);
-              counter.html(currentIndex + 1);
-              closeButton = $('.close')[0];
-              cardExpand.css('visibility', 'visible');
-              overlayScreen.css('visibility', 'visible');
+        currentIndex = $('li').index(this);
+        cardExpand.html(cardExpandText[currentIndex]);
+        counter.html(currentIndex + 1);
+        closeButton = $('.close')[0];
+        cardExpand.css('visibility', 'visible');
+    overlayScreen.css('visibility', 'visible');
+    console.log(currentIndex);
 });
 
 
