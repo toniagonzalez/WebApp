@@ -3,6 +3,7 @@
 
 
 //------Toggle Button Variables-----------//
+
 const emailInput = document.getElementsByClassName('toggleButton email')[0];
 const profileInput = document.getElementsByClassName('toggleButton setprofile')[0];
 
@@ -83,280 +84,280 @@ let timeZone = document.getElementsByTagName('select')[0];
 
 
 //------Call Charts onLoad-----------//
-window.onload = function () {
+window.onload = function (){
 
 
-//------Daily Traffic Bar Chart-----------//
-const dailyBarChart = document.getElementById('dailyTraffic');
-    var dailyTraffic = new Chart(dailyBarChart, {
-        type: 'bar',
-        data: {
-            labels: days,
-            datasets: [
-                {
-                    data: traffic,
-                    borderColor: '#7979d2', //purple
-                    backgroundColor: '#7979d2', //purple
-                    fill: true,
+    //------Daily Traffic Bar Chart-----------//
+    const dailyBarChart = document.getElementById('dailyTraffic');
+        var dailyTraffic = new Chart(dailyBarChart, {
+            type: 'bar',
+            data: {
+                labels: days,
+                datasets: [
+                    {
+                        data: traffic,
+                        borderColor: '#7979d2', //purple
+                        backgroundColor: '#7979d2', //purple
+                        fill: true,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
                 }
-            ]
-        },
+            }
+        });
+
+       
+
+
+    //------Mobile Users Donught Chart-----------//
+
+    const mobileUsers = document.getElementById('mobileUsers');
+    var mobile = new Chart(mobileUsers, {
+      type: 'doughnut',
+      data: {
+        labels: form,
+        datasets: [
+            {
+            data: usage,
+            borderColor: ['#00ace6', '#00cc99', '#7979d2'], //aqua green purple
+            backgroundColor: ['#00ace6', '#00cc99', '#7979d2'], //aqua green purple
+            fill: true,
+            }
+                  ]
+            },
         options: {
             legend: {
-                display: false,
-            }
+              position: 'right',
+              labels: {
+              boxWidth: 20,
+                      }
+                    },
         }
     });
 
-   
 
-
-//------Mobile Users Donught Chart-----------//
-
-const mobileUsers = document.getElementById('mobileUsers');
-var mobile = new Chart(mobileUsers, {
-  type: 'doughnut',
-  data: {
-    labels: form,
-    datasets: [
-        {
-        data: usage,
-        borderColor: ['#00ace6', '#00cc99', '#7979d2'], //aqua green purple
-        backgroundColor: ['#00ace6', '#00cc99', '#7979d2'], //aqua green purple
-        fill: true,
-        }
-              ]
-        },
-    options: {
-        legend: {
-          position: 'right',
-          labels: {
-          boxWidth: 20,
-                  }
-                },
-    }
-});
-
-
-//------Traffic Main default setting Hourly-----------//
-hourly.style.color = 'white';
-hourly.style.backgroundColor ='#00cc99';
-mainChartHourly = new Chart(mainTrafficHourly, {
-  type: 'line',
-  data: {
-    labels: rangeHourly,
-    datasets: [
-      {
-        label: "",
-        data: siteHourly,
-        borderColor: '#7979d2', //purple
-        backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
-        fill: true,
-        borderWidth: 1,
-        lineTension: 0,
-        pointRadius: 6,
-        pointBorderColor:'#7979d2', //purple
-        pointBackgroundColor:'#fff', //white
-        pointBorderWidth: 1.5,
-      }
-    ]
-  },
-  options: {
-      responsive: true,
-          legend: {
-            display: false,
-                  },
-          scales: {
-              yAxes: [{
-                ticks: {
-                        beginAtZero: false,
+    //------Traffic Main default setting Hourly-----------//
+    hourly.style.color = 'white';
+    hourly.style.backgroundColor ='#00cc99';
+    mainChartHourly = new Chart(mainTrafficHourly, {
+      type: 'line',
+      data: {
+        labels: rangeHourly,
+        datasets: [
+          {
+            label: "",
+            data: siteHourly,
+            borderColor: '#7979d2', //purple
+            backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
+            fill: true,
+            borderWidth: 1,
+            lineTension: 0,
+            pointRadius: 6,
+            pointBorderColor:'#7979d2', //purple
+            pointBackgroundColor:'#fff', //white
+            pointBorderWidth: 1.5,
+          }
+        ]
+      },
+      options: {
+          responsive: true,
+              legend: {
+                display: false,
+                      },
+              scales: {
+                  yAxes: [{
+                    ticks: {
+                            beginAtZero: false,
+                            }
+                          }]
                         }
-                      }]
+                }
+    });
+
+    //------Traffic Main Line Chart & Listener-----------//
+    timechart.addEventListener('click', function(e){
+        //Variables
+        mainTrafficHourly = document.getElementById('trafficMainHourly');
+        mainTrafficDaily = document.getElementById('trafficMainDaily');
+        mainTrafficWeekly = document.getElementById('trafficMainWeekly');
+        mainTrafficMonthly = document.getElementById('trafficMainMonthly');
+
+        //reset hourly button
+        hourly.style.color = '#808080'; //gray
+        hourly.style.backgroundColor ='#fff'; //white
+
+        if( hourly == e.target ) {
+          hourly.style.color = 'white';
+          hourly.style.backgroundColor ='#00cc99';
+              //------Traffic Main Line Chart Hourly-----------//
+              mainChartHourly = new Chart(mainTrafficHourly, {
+                type: 'line',
+                data: {
+                  labels: rangeHourly,
+                  datasets: [
+                    {
+                      label: "",
+                      data: siteHourly,
+                      borderColor: '#7979d2', //purple
+                      backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
+                      fill: true,
+                      borderWidth: 1,
+                      lineTension: 0,
+                      pointRadius: 6,
+                      pointBorderColor:'#7979d2', //purple
+                      pointBackgroundColor:'#fff', //white
+                      pointBorderWidth: 1.5,
                     }
-            }
-});
-
-//------Traffic Main Line Chart & Listener-----------//
-timechart.addEventListener('click', function(e){
-    //Variables
-    mainTrafficHourly = document.getElementById('trafficMainHourly');
-    mainTrafficDaily = document.getElementById('trafficMainDaily');
-    mainTrafficWeekly = document.getElementById('trafficMainWeekly');
-    mainTrafficMonthly = document.getElementById('trafficMainMonthly');
-
-    //reset hourly button
-    hourly.style.color = '#808080'; //gray
-    hourly.style.backgroundColor ='#fff'; //white
-
-    if( hourly == e.target ) {
-      hourly.style.color = 'white';
-      hourly.style.backgroundColor ='#00cc99';
-          //------Traffic Main Line Chart Hourly-----------//
-          mainChartHourly = new Chart(mainTrafficHourly, {
-            type: 'line',
-            data: {
-              labels: rangeHourly,
-              datasets: [
-                {
-                  label: "",
-                  data: siteHourly,
-                  borderColor: '#7979d2', //purple
-                  backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
-                  fill: true,
-                  borderWidth: 1,
-                  lineTension: 0,
-                  pointRadius: 6,
-                  pointBorderColor:'#7979d2', //purple
-                  pointBackgroundColor:'#fff', //white
-                  pointBorderWidth: 1.5,
-                }
-              ]
-            },
-            options: {
-                responsive: true,
-                    legend: {
-                      display: false,
-                            },
-                    scales: {
-                        yAxes: [{
-                          ticks: {
-                                  beginAtZero: false,
+                  ]
+                },
+                options: {
+                    responsive: true,
+                        legend: {
+                          display: false,
+                                },
+                        scales: {
+                            yAxes: [{
+                              ticks: {
+                                      beginAtZero: false,
+                                      }
+                                    }]
                                   }
-                                }]
-                              }
-                      }
-          });
-      mainTrafficHourly.style.display = 'block';
-      mainTrafficDaily.style.display = 'none';
-      mainTrafficWeekly.style.display = 'none';
-      mainTrafficMonthly.style.display = 'none';
-      }
+                          }
+              });
+          mainTrafficHourly.style.display = 'block';
+          mainTrafficDaily.style.display = 'none';
+          mainTrafficWeekly.style.display = 'none';
+          mainTrafficMonthly.style.display = 'none';
+          }
 
-      if( daily == e.target) {
-          //------Traffic Main Line Chart Daily-----------//
-          mainChartDaily = new Chart(mainTrafficDaily, {
-            type: 'line',
-            data: {
-              labels: rangeDaily,
-              datasets: [
-                {
-                  label: "",
-                  data: siteDaily,
-                  borderColor: '#7979d2', //purple
-                  backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
-                  fill: true,
-                  borderWidth: 1,
-                  lineTension: 0,
-                  pointRadius: 6,
-                  pointBorderColor:'#7979d2', //purple
-                  pointBackgroundColor:'#fff', //white
-                  pointBorderWidth: 1.5,
-                }
-              ]
-            },
-            options: {
-                responsive: true,
-                    legend: {
-                      display: false,
-                            },
-                    scales: {
-                        yAxes: [{
-                          ticks: {
-                                  beginAtZero: false,
-                                  }
-                                }]
-                              }
+          if( daily == e.target) {
+              //------Traffic Main Line Chart Daily-----------//
+              mainChartDaily = new Chart(mainTrafficDaily, {
+                type: 'line',
+                data: {
+                  labels: rangeDaily,
+                  datasets: [
+                    {
+                      label: "",
+                      data: siteDaily,
+                      borderColor: '#7979d2', //purple
+                      backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
+                      fill: true,
+                      borderWidth: 1,
+                      lineTension: 0,
+                      pointRadius: 6,
+                      pointBorderColor:'#7979d2', //purple
+                      pointBackgroundColor:'#fff', //white
+                      pointBorderWidth: 1.5,
                     }
-          });
-      mainTrafficHourly.style.display = 'none';
-      mainTrafficDaily.style.display = 'block';
-      mainTrafficWeekly.style.display = 'none';
-      mainTrafficMonthly.style.display = 'none';
-    }
+                  ]
+                },
+                options: {
+                    responsive: true,
+                        legend: {
+                          display: false,
+                                },
+                        scales: {
+                            yAxes: [{
+                              ticks: {
+                                      beginAtZero: false,
+                                      }
+                                    }]
+                                  }
+                        }
+              });
+          mainTrafficHourly.style.display = 'none';
+          mainTrafficDaily.style.display = 'block';
+          mainTrafficWeekly.style.display = 'none';
+          mainTrafficMonthly.style.display = 'none';
+        }
 
-     if( weekly == e.target) {
-          //------Traffic Main Line Chart Weekly-----------//
-          mainChartWeekly = new Chart(mainTrafficWeekly, {
-            type: 'line',
-            data: {
-              labels: rangeWeekly,
-              datasets: [
-                {
-                  label: "",
-                  data: siteWeekly,
-                  borderColor: '#7979d2', //purple
-                  backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
-                  fill: true,
-                  borderWidth: 1,
-                  lineTension: 0,
-                  pointRadius: 6,
-                  pointBorderColor:'#7979d2', //purple
-                  pointBackgroundColor:'#fff', //white
-                  pointBorderWidth: 1.5,
-                }
-              ]
-            },
-            options: {
-                responsive: true,
-                    legend: {
-                        display: false,
-                            },
-                    scales: {
-                        yAxes: [{
-                          ticks: {
-                                  beginAtZero: false,
+         if( weekly == e.target) {
+              //------Traffic Main Line Chart Weekly-----------//
+              mainChartWeekly = new Chart(mainTrafficWeekly, {
+                type: 'line',
+                data: {
+                  labels: rangeWeekly,
+                  datasets: [
+                    {
+                      label: "",
+                      data: siteWeekly,
+                      borderColor: '#7979d2', //purple
+                      backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
+                      fill: true,
+                      borderWidth: 1,
+                      lineTension: 0,
+                      pointRadius: 6,
+                      pointBorderColor:'#7979d2', //purple
+                      pointBackgroundColor:'#fff', //white
+                      pointBorderWidth: 1.5,
+                    }
+                  ]
+                },
+                options: {
+                    responsive: true,
+                        legend: {
+                            display: false,
+                                },
+                        scales: {
+                            yAxes: [{
+                              ticks: {
+                                      beginAtZero: false,
+                                      }
+                                    }]
                                   }
-                                }]
-                              }
-                      }
-          });
-      mainTrafficHourly.style.display = 'none';
-      mainTrafficDaily.style.display = 'none';
-      mainTrafficWeekly.style.display = 'block';
-      mainTrafficMonthly.style.display = 'none';
-    }
-    if ( monthly == e.target) {
-          //------Traffic Main Line Chart Monthly-----------//
-          mainChartMonthly = new Chart(mainTrafficMonthly, {
-            type: 'line',
-            data: {
-              labels: rangeMonthly,
-              datasets: [
-                {
-                  label: "",
-                  data: siteMonthly,
-                  borderColor: '#7979d2', //purple
-                  backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
-                  fill: true,
-                  borderWidth: 1,
-                  lineTension: 0,
-                  pointRadius: 6,
-                  pointBorderColor:'#7979d2', //purple
-                  pointBackgroundColor:'#fff', //white
-                  pointBorderWidth: 1.5,
-                }
-              ]
-            },
-            options: {
-                responsive: true,
-                    legend: {
-                        display: false,
-                          },
-                    scales: {
-                        yAxes: [{
-                          ticks: {
-                                  beginAtZero: false,
+                          }
+              });
+          mainTrafficHourly.style.display = 'none';
+          mainTrafficDaily.style.display = 'none';
+          mainTrafficWeekly.style.display = 'block';
+          mainTrafficMonthly.style.display = 'none';
+        }
+        if ( monthly == e.target) {
+              //------Traffic Main Line Chart Monthly-----------//
+              mainChartMonthly = new Chart(mainTrafficMonthly, {
+                type: 'line',
+                data: {
+                  labels: rangeMonthly,
+                  datasets: [
+                    {
+                      label: "",
+                      data: siteMonthly,
+                      borderColor: '#7979d2', //purple
+                      backgroundColor: 'rgba(121, 121, 210, .2)', //light-purple
+                      fill: true,
+                      borderWidth: 1,
+                      lineTension: 0,
+                      pointRadius: 6,
+                      pointBorderColor:'#7979d2', //purple
+                      pointBackgroundColor:'#fff', //white
+                      pointBorderWidth: 1.5,
+                    }
+                  ]
+                },
+                options: {
+                    responsive: true,
+                        legend: {
+                            display: false,
+                              },
+                        scales: {
+                            yAxes: [{
+                              ticks: {
+                                      beginAtZero: false,
+                                      }
+                                    }]
                                   }
-                                }]
-                              }
-                      }
-          });
-      mainTrafficHourly.style.display = 'none';
-      mainTrafficDaily.style.display = 'none';
-      mainTrafficWeekly.style.display = 'none';
-      mainTrafficMonthly.style.display = 'block';
-    }
-});
+                          }
+              });
+          mainTrafficHourly.style.display = 'none';
+          mainTrafficDaily.style.display = 'none';
+          mainTrafficWeekly.style.display = 'none';
+          mainTrafficMonthly.style.display = 'block';
+        }
+    });
 
 };
 

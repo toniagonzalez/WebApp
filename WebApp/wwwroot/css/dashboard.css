@@ -19,58 +19,56 @@
 }
 
 
-/*-------Grid Layout-------*/
-
-.grid-2 {
-    display: grid;
-    height: 100%;
+/*-------Layout-------*/
+.charts,
+.traffic,
+.mobile,
+.social,
+.members,
+.activitiy,
+.message,
+.settings {
+    display: block;
     width: 100%;
-    box-sizing: border-box;
-    grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));
-    grid-template-rows: repeat(3, 70px);
-    grid-auto-rows: auto;
-    grid-template-areas: "charts" "traffic" "mobile" "social" "members" "activity" "message" "settings";
 }
-
-/*-------Grid Area Definitions-------*/
 
 
 .charts {
-    grid-area: charts;
+    /*grid-area: charts;*/
     border: 1px solid var(--border-color);
     border-top: none;
     padding: 0 20px;
 }
 
 .mobile {
-    grid-area: mobile;
+    /*grid-area: mobile;*/
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
 }
 
 .traffic {
-    grid-area: traffic;
+    /*grid-area: traffic;*/
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
 }
 
 .social {
-    grid-area: social;
+    /*grid-area: social;*/
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
 }
 
 .members {
-    grid-area: members;
+    /*grid-area: members;*/
     border: 1px solid var(--border-color);
     padding-bottom: 25px;
 }
 
 .activity {
-    grid-area: activity;
+    /*grid-area: activity;*/
     border: 1px solid var(--border-color);
     padding-bottom: 25px;
 }
@@ -93,7 +91,6 @@
 }
 
 .social h2 {
-    grid-area: heading;
     margin-bottom: 0;
 }
 

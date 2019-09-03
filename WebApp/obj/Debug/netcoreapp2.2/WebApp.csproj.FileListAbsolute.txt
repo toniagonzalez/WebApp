@@ -5,7 +5,6 @@
 /Users/toniagonzalez/Projects/WebApp/WebApp/bin/Debug/netcoreapp2.2/WebApp.pdb
 /Users/toniagonzalez/Projects/WebApp/WebApp/bin/Debug/netcoreapp2.2/WebApp.Views.dll
 /Users/toniagonzalez/Projects/WebApp/WebApp/bin/Debug/netcoreapp2.2/WebApp.Views.pdb
-/Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.csprojAssemblyReference.cache
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.csproj.CoreCompileInputs.cache
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.RazorAssemblyInfo.cache
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.RazorAssemblyInfo.cs
@@ -14,6 +13,7 @@
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.TagHelpers.input.cache
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.TagHelpers.output.cache
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.RazorCoreGenerate.cache
+/Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/Razor/Views/Home/Dashboard.g.cshtml.cs
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
@@ -27,4 +27,4 @@
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.dll
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.pdb
 /Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.csproj.CopyComplete
-/Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/Razor/Views/Home/Dashboard.g.cshtml.cs
+/Users/toniagonzalez/Projects/WebApp/WebApp/obj/Debug/netcoreapp2.2/WebApp.csprojAssemblyReference.cache

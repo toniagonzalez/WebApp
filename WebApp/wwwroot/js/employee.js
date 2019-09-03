@@ -214,8 +214,8 @@ ul.on('click', 'li', function(e) {
         counter.html(currentIndex + 1);
         closeButton = $('.close')[0];
         cardExpand.css('visibility', 'visible');
-    overlayScreen.css('visibility', 'visible');
-    console.log(currentIndex);
+        overlayScreen.css('visibility', 'visible');
+        console.log(currentIndex);
 });
 
 

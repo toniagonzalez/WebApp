@@ -18,4 +18,7 @@
     <Content Remove="wwwroot\css\EmptyCSharpFile.cs" />
     <Content Remove="wwwroot\package.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
 </Project>
