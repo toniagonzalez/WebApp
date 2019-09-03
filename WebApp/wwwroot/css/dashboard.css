@@ -34,47 +34,40 @@
 
 
 .charts {
-    /*grid-area: charts;*/
     border: 1px solid var(--border-color);
     border-top: none;
     padding: 0 20px;
 }
 
 .mobile {
-    /*grid-area: mobile;*/
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
 }
 
 .traffic {
-    /*grid-area: traffic;*/
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
 }
 
 .social {
-    /*grid-area: social;*/
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
 }
 
 .members {
-    /*grid-area: members;*/
     border: 1px solid var(--border-color);
     padding-bottom: 25px;
 }
 
 .activity {
-    /*grid-area: activity;*/
     border: 1px solid var(--border-color);
     padding-bottom: 25px;
 }
 
 .message {
-    grid-area: message;
     border: 1px solid var(--border-color);
     padding-left: 20px;
     padding-bottom: 25px;
@@ -82,7 +75,6 @@
 }
 
 .settings {
-    grid-area: settings;
     border: 1px solid var(--border-color);
     display: block;
     padding-left: 20px;

@@ -2966,11 +2966,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Shared/_CookieConsentPartial.cshtml",
-      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views/_ViewImports.cshtml",
       "TargetPath": "Views/_ViewImports.cshtml",
       "FileKind": "mvc"

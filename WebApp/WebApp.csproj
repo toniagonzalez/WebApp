@@ -17,6 +17,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\css\EmptyCSharpFile.cs" />
     <Content Remove="wwwroot\package.json" />
+    <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />

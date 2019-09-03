@@ -2,24 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 
-//------Toggle Button Variables-----------//
 
-const emailInput = document.getElementsByClassName('toggleButton email')[0];
-const profileInput = document.getElementsByClassName('toggleButton setprofile')[0];
-
-let onEmail = document.getElementsByClassName('on')[0];
-let offEmail = document.getElementsByClassName('off')[0];
-
-let onProfile = document.getElementsByClassName('on')[1];
-let offProfile = document.getElementsByClassName('off')[1];
-
-let emailToggle = document.getElementsByClassName('toggleButton')[0];
-let profileToggle = document.getElementsByClassName('toggleButton')[1];
-
-emailToggle.style.backgroundColor = '#a6a6a6'; //grey
-onEmail.style.display = 'none';
-profileToggle.style.backgroundColor = '#a6a6a6'; //grey
-onProfile.style.display = 'none';
 
 //------Chart Variables-----------//
 let timechart = document.getElementsByClassName('timechart')[0];
@@ -67,20 +50,6 @@ const traffic = [70, 100, 150, 125, 225, 200, 120];
 const form = ['Phones', 'Tablets', 'Desktop']
 const usage = [15, 23, 70];
 
-//----Message Varaiables-----//
-let messageWidget = document.getElementsByClassName('message')[0];
-let sendButton =  document.getElementsByClassName('send')[0];
-let user = document.getElementsByTagName('input')[1];
-let userMessage =  document.getElementsByTagName('textarea')[0];
-let confirmation = document.getElementsByClassName('confirmation')[0];
-
-
-//----Settings Varaiables-----//
-let localStorage = window.localStorage;
-let settingsWidget = document.getElementById('settings');
-let saveButton = document.getElementsByClassName('save')[0];
-let cancelButton = document.getElementsByClassName('cancel')[0];
-let timeZone = document.getElementsByTagName('select')[0];
 
 
 //------Call Charts onLoad-----------//
@@ -362,131 +331,15 @@ window.onload = function (){
 };
 
 
-//-------Message Sent Notification-----//
-messageWidget.addEventListener('click', function(e){
-  //Variables
-  sendButton =  document.getElementsByClassName('send')[0];
-  user = document.getElementsByTagName('input')[1];
-  userMessage =  document.getElementsByTagName('textarea')[0];
-  confirmation = document.getElementsByClassName('confirmation')[0];
+//------New Employee Date--------//
+let todayDate = document.getElementsByClassName('date');
 
+console.log(todayDate);
 
-  if (sendButton == e.target){
-        if (user.value == "" || userMessage.value == "") {
-          if (user.value == "") {
-              user.style.border = "2px solid red";
-           }
-          if (userMessage.value == "") {
-              userMessage.style.border = "2px solid red";
-           }
-        }
-        else {
-              confirmation.style.display = 'flex';
-              user.placeholder = 'Search for Users';
-              userMessage.placeholder = 'Message Users';
-              user.value = '';
-              userMessage.value = '';
-            }
-    }
+for (let i = 0; i < todayDate.length; i++) {
+    let today = new Date();
 
-  if ( user == e.target || userMessage == e.target){
-             e.target.style.border = "#808080"; /*gray*/;
-   }
+    todayDate[i].innerHTML =  (today.getMonth()+1) + "/" + today.getDate() + "/" + today.getFullYear();
+}
 
-  if (confirmation == e.target) {
-            confirmation.style.display = 'none';
-   }
-});
-
-
-//------Toggle Button On/Off-----------//
-
-emailInput.addEventListener('click', function(){
-  //Variables
-  let emailCheck = onEmail.style.display = 'inline-block';
-   localStorage = window.localStorage;
-
-  if (offEmail.style.display =='inline-block') {
-      emailToggle.style.backgroundColor = '#7979d2'; //purple
-      onEmail.style.display = 'inline-block';
-      offEmail.style.display = 'none';
-      localStorage.setItem('email', emailCheck);
-   }
-
-   else {
-    emailToggle.style.backgroundColor = '#a6a6a6'; //grey
-    offEmail.style.display = 'inline-block';
-    onEmail.style.display = 'none';
-    localStorage.removeItem('email', emailCheck);
-  }
-});
-
-
-profileInput.addEventListener('click', function(){
-   //Variables
-   let profileCheck = onProfile.style.display = 'inline-block';
-   localStorage = window.localStorage;
-
-  if (offProfile.style.display =='inline-block') {
-      profileToggle.style.backgroundColor = '#7979d2'; //purple
-      onProfile.style.display = 'inline-block';
-      offProfile.style.display = 'none';
-      localStorage.setItem('profile', profileCheck);
-  }
-  else {
-    profileToggle.style.backgroundColor = '#a6a6a6'; //grey
-    offProfile.style.display = 'inline-block';
-    onProfile.style.display = 'none';
-    localStorage.removeItem('profile', profileCheck);
-  }
-
-});
-
-
-// // //--------Store Setting Preferences---//
-settingsWidget.addEventListener('click', function(e){
-  //Variables
-  localStorage = window.localStorage;
-  saveButton = document.getElementsByClassName('save')[0];
-  cancelButton = document.getElementsByClassName('cancel')[0];
-
-  timeZone = document.getElementsByTagName('select')[0];
-
-  if (cancelButton == e.target) {
-      localStorage.clear();
-
-      profileToggle.style.backgroundColor = '#a6a6a6'; //grey
-      offProfile.style.display = 'inline-block';
-      onProfile.style.display = 'none';
-
-      emailToggle.style.backgroundColor = '#a6a6a6'; //grey
-      offEmail.style.display = 'inline-block';
-      onEmail.style.display = 'none';
-
-      timeZone.selectedIndex = 0;
-  }
-
-  if (saveButton == e.target) {
-      localStorage.setItem('time', timeZone.selectedIndex);
-    }
-
-});
-
-//----Call Local Storage on load----//
-window.addEventListener('load', function(){
-
-  if (localStorage.getItem('email') == 'inline-block') {
-    emailToggle.style.backgroundColor = '#7979d2'; //purple
-    onEmail.style.display = 'inline-block';
-    offEmail.style.display = 'none';
-  }
-
-  if (localStorage.getItem('profile') == 'inline-block') {
-    profileToggle.style.backgroundColor = '#7979d2'; //purple
-    onProfile.style.display = 'inline-block';
-    offProfile.style.display = 'none';
-  }
-
-   timeZone.selectedIndex = localStorage.getItem('time');
-});
 
