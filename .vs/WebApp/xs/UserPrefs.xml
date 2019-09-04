@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="WebApp/wwwroot/css/employee.css">
     <Files>
       <File FileName="WebApp/Views/Shared/_Layout.cshtml" Line="20" Column="78" />
-      <File FileName="WebApp/wwwroot/css/dashboard.css" Line="260" Column="25" />
+      <File FileName="WebApp/wwwroot/css/dashboard.css" />
       <File FileName="WebApp/wwwroot/css/employee.css" Line="1" Column="1" />
     </Files>
     <Pads>

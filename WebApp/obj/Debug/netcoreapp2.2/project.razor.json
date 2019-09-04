@@ -2966,6 +2966,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Home/Employee.cshtml",
+      "TargetPath": "Views/Home/Employee.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/_ViewImports.cshtml",
       "TargetPath": "Views/_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -2978,11 +2983,6 @@
     {
       "FilePath": "Views/_ViewStart.cshtml",
       "TargetPath": "Views/_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Home/Dashboard.cshtml",
-      "TargetPath": "Views/Home/Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {
