@@ -11,7 +11,7 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult Dashboard()
+        public IActionResult Employee()
         {
             return View();
         }

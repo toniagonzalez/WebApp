@@ -18,8 +18,12 @@
     <Content Remove="wwwroot\css\EmptyCSharpFile.cs" />
     <Content Remove="wwwroot\package.json" />
     <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
+    <Content Remove="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Home\Employee.cshtml" />
   </ItemGroup>
 </Project>
