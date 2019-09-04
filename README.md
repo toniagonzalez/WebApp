@@ -13,10 +13,10 @@ This ASP.NET MVC Web Application is a work in progress, it currently includes an
 
 ### Project To Do List
 - [X] Add Chart.js CDN
-- [-] Cross-Browser Compatibility 
-- [-] Alert Notification Widget
-- [-] Settings Widget
-- [-] Email Widget
-- [-] Modal Window Styling
-- [-] Fix Modal Window Index issue
-- [-] Local Storage for Preferences
+- [o] Cross-Browser Compatibility 
+- [o] Alert Notification Widget
+- [o] Settings Widget
+- [ ] Email Widget
+- [ ] Modal Window Styling
+- [ ] Fix Modal Window Index issue
+- [ ] Local Storage for Preferences
