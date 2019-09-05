@@ -11,12 +11,13 @@ This ASP.NET MVC Web Application is a work in progress, it currently includes an
  * Choose Build Solution and the project will open in a new browser window
 
 
-### Project To Do List
+#### Project To Do List
 - [X] Add Chart.js CDN
+- [X] Deploy App to Azure
 - [ ] Cross-Browser Compatibility 
 - [ ] Alert Notification Widget
 - [ ] Settings Widget
 - [ ] Email Widget
-- [ ] Modal Window Styling
+- [X] Modal Window Styling
 - [ ] Fix Modal Window Index issue
 - [ ] Local Storage for Preferences

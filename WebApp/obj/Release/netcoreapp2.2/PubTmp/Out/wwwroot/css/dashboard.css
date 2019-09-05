@@ -1,0 +1,525 @@
+﻿/*-----Variables----*/
+
+:root {
+    --main-background: #fff; /*white*/
+    --accent-background: #eee6ff; /*light-purple*/
+    --active-background: #ffffe6; /*light-yellow*/
+    --accent-color: #7979d2; /*purple*/
+    --nav-background-color: #52527a; /*plum*/
+    --font-size-large: 1.6em;
+    --font-size-medium: 1.3em;
+    --font-size-small: .9em;
+    --font-size-xsmall: .8em;
+    --text-accent: #fff; /*white*/
+    --text-body: #808080; /*gray*/
+    --text-social-totals: #404040; /*drk gray*/
+    --border-color: #d9d9d9; /*medium gray*/
+    --gray-button: #a6a6a6; /*gray*/
+    --green-button: #00cc99; /*green*/
+}
+
+
+/*-------Layout-------*/
+.charts,
+.traffic,
+.mobile,
+.social,
+.members,
+.activitiy,
+.message,
+.settings {
+    display: block;
+    width: 100%;
+}
+
+
+.charts {
+    border: 1px solid var(--border-color);
+    border-top: none;
+    padding: 0 20px;
+}
+
+.mobile {
+    border: 1px solid var(--border-color);
+    padding-left: 20px;
+    padding-bottom: 25px;
+}
+
+.traffic {
+    border: 1px solid var(--border-color);
+    padding-left: 20px;
+    padding-bottom: 25px;
+}
+
+.social {
+    border: 1px solid var(--border-color);
+    padding-left: 20px;
+    padding-bottom: 25px;
+}
+
+.members {
+    border: 1px solid var(--border-color);
+    padding-bottom: 25px;
+}
+
+.activity {
+    border: 1px solid var(--border-color);
+    padding-bottom: 25px;
+}
+
+.message {
+    border: 1px solid var(--border-color);
+    padding-left: 20px;
+    padding-bottom: 25px;
+    text-align: left;
+}
+
+.settings {
+    border: 1px solid var(--border-color);
+    display: block;
+    padding-left: 20px;
+    padding-bottom: 25px;
+    text-align: left;
+}
+
+.social h2 {
+    grid-area: heading;
+    margin-bottom: 0;
+}
+
+.social-widget-1 {
+    grid-area: twitter;
+}
+
+.social-widget-2 {
+    grid-area: facebook;
+}
+
+.social-widget-3 {
+    grid-area: google;
+}
+
+img.profile-pic {
+    grid-area: pic;
+}
+
+.profile-pic p,
+.member-accent {
+    grid-area: member;
+    padding-right: 5px;
+}
+
+.date {
+    grid-area: date;
+    text-align: left;
+}
+
+/*-------Grid Area Styling & Layout-------*/
+
+/*------------Charts-------*/
+
+#trafficMain,
+#mobile,
+#dailyTraffic {
+    width: 80%;
+    height: 50%;
+}
+
+button.hourly,
+button.daily,
+button.weekly,
+button.monthly {
+    border: none;
+    background-color: var(--main-background);
+    color: var(--text-body);
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+    button.hourly:focus,
+    button.daily:focus,
+    button.weekly:focus,
+    button.monthly:focus {
+        border: none;
+        background-color: var(--green-button);
+        color: var(--text-accent);
+        outline: none;
+    }
+
+.timechart {
+    text-align: right;
+}
+
+.chart-Selected {
+    background-color: green;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50px;
+    height: .9em;
+    color: white;
+}
+
+/*------Members & Activity------*/
+
+.members,
+.activity {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0 20px 0 10px;
+    box-sizing: border-box;
+}
+
+.member-accent {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-weight: bolder;
+    font-size: var(--font-size-small);
+    color: var(--accent-color);
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 40px 180px 1fr;
+    grid-template-areas: "pic member date";
+    border-bottom: .5px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+    .profile:last-child {
+        border-bottom: none;
+    }
+
+    .profile p {
+        padding-top: 20px;
+    }
+
+.profile-pic {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-top: 20px;
+}
+
+.arrow {
+    color: var(--accent-color);
+    font-size: var(--font-size-large);
+    margin-left: 25px;
+    font-weight: lighter;
+}
+
+.time {
+    font-size: var(--font-size-xsmall);
+    font-family: 'Roboto', sans-serif;
+}
+
+/*------------Social-------*/
+
+.social {
+    display: grid;
+    grid-template-rows: 50px repeat(auto-fit, 1fr);
+    grid-template-areas: "heading" "twitter" "facebook" "google";
+}
+
+.social-widget {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    width: 80%;
+    height: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-bottom: 20px;
+    margin: 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--accent-background);
+    font-size: var(--font-size-medium);
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+    margin: 25px;
+}
+
+.social-icon {
+    display: inline-block;
+    text-align: justify;
+    margin: 20px 45px 20px 15px;
+    width: 45px;
+    height: 45px;
+    padding: 15px;
+    border-radius: 50%;
+    fill: var(--text-accent);
+    background-color: var(--accent-color);
+}
+
+.social-accent {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+    text-align: left;
+    font-weight: bolder;
+    color: var(--accent-color);
+}
+
+.social-totals {
+    font-weight: lighter;
+    font-size: var(--font-size-large);
+    color: var(--text-social-totals);
+    padding-bottom: 5px;
+}
+/*------------Message Users & Settings-------*/
+
+.settings,
+.message {
+    display: block;
+}
+
+/*-------Button and Input Styling & Layout-------*/
+.confirmation {
+    width: 90%;
+    height: 2.5em;
+    box-sizing: border-box;
+    color: white;
+    background-color: var(--green-button);
+    padding: 10px 15px 0px 15px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: none;
+    justify-content: space-between;
+}
+
+.message textarea {
+    width: 90%;
+    border-radius: 7px;
+    padding-left: 15px;
+    min-height: 100px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border-style: none;
+    background-color: var(--accent-background);
+    color: var(--text-body);
+}
+
+textarea:hover,
+.search input:hover,
+.message input:hover,
+select:hover {
+    background-color: var(--active-background);
+}
+
+input,
+select {
+    height: 2.5em;
+    border-radius: 7px;
+    padding-left: 15px;
+    border-style: none;
+    box-sizing: border-box;
+    color: var(--text-body);
+}
+
+.search input {
+    width: 90%;
+}
+
+.settings select {
+    display: block;
+    width: 90%;
+    border: .5px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.settings input {
+    display: none;
+}
+
+.message input {
+    width: 90%;
+    margin-bottom: 20px;
+    background-color: var(--accent-background);
+}
+
+.button {
+    height: 50px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--text-accent);
+}
+
+.send {
+    width: 90%;
+    background-color: var(--accent-color);
+    outline: none;
+}
+
+.save {
+    width: 45%;
+    background-color: var(--accent-color);
+    outline: none;
+}
+
+.cancel {
+    width: 45%;
+    background-color: var(--gray-button);
+    outline: none;
+}
+
+/*-------Toggle Button Styling-------*/
+
+span.toggleButton {
+    border-radius: 25px;
+    width: 80px;
+    max-height: 30px;
+    border: 2px solid var(--border-color);
+    display: inline-block;
+    text-align: justify;
+}
+
+    span.toggleButton.email {
+        margin-left: 50px;
+        margin-bottom: 25px;
+    }
+
+    span.toggleButton.setprofile {
+        margin-left: 80px;
+        margin-bottom: 30px;
+    }
+
+.toggle {
+    width: 30px;
+    height: 30px
+}
+
+.toggleButton p,
+.toggleButton input {
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.toggleButton input {
+    margin-top: 3px;
+    display: none;
+}
+
+.on,
+.off {
+    color: var(--text-accent);
+    font-size: var(--font-size-small);
+    text-shadow: 1px 1px 1px var(--gray-button);
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.on {
+    padding: 0 8px;
+    margin-right: 20px;
+}
+
+.off {
+    margin-left: 9px;
+}
+
+/*-------Media Queries----------*/
+
+@media (min-width: 768px) {
+    .grid-1 {
+        width: 100%;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(3, 70px);
+        grid-auto-rows: auto;
+        grid-template-areas: "charts charts" "traffic mobile" "social social" "members activity" "message settings"
+    }
+
+    .dashboard {
+        justify-content: space-around;
+    }
+
+    #flash {
+        padding: 20px 10px 15px 5px;
+    }
+
+    .closeAlert {
+        padding: 5px 10px 0 25px;
+    }
+
+    .searchDashboard span {
+        width: 80%;
+        height: 70px;
+        box-sizing: border-box;
+        background-color: var(--accent-background);
+        text-align: right;
+        padding: 20px 25px 0 0;
+    }
+
+    .searchDashboard h1 {
+        padding-top: 25px;
+        padding-right: 20px;
+    }
+
+    .profile p {
+        padding-top: .6em;
+    }
+
+    .profile {
+        grid-template-columns: 75px 1fr 75px;
+    }
+
+    .search {
+        top: 140px;
+    }
+
+    .social {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: "heading heading heading" "twitter facebook google"
+    }
+
+    .social-widget {
+        margin: 25px 2px 30px 2px;
+    }
+
+    .social-icon {
+        margin: 20px 5px;
+    }
+
+    #dailyTraffic {
+        height: 400px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .grid--dashboard {
+        grid-template-columns: 70px 1fr 1fr;
+        grid-template-rows: 70px 70px;
+        grid-auto-rows: auto;
+        grid-template-areas: "charts charts charts" "traffic traffic mobile" "social social social" "members members activity" "message message settings"
+    }
+    
+    .searchDashboard {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #flash {
+        position: absolute;
+        top: 135px;
+        left: 85px;
+        margin-left: 0;
+        padding: 15px 10px;
+    }
+
+    
+    .searchDashboard {
+        position: inherit;
+        top: 70px;
+    }
+
+    .social-widget {
+        margin: 30px 5px 50px 15px;
+    }
+}
