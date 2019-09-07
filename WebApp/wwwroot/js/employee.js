@@ -60,30 +60,30 @@ fetch('https://randomuser.me/api/?results=12&nat=US&inc=name,location,email,pict
 
 //----Function to Generate Employee Cards-----//
 function generateCards(data) {
-      employees = data.results;
+    employees = data.results;
 
-      profileCards = employees.map(employee => {
-           employeeProfile = '';
-           employeeProfile += '<li class="employeeCard">';
-           employeeProfile += `<a href="#${employee.name.last}">`;
-           employeeProfile += '<div class="card">';
-           employeeProfile += `<img src=${employee.picture.large} class="cardPhoto" alt="Employee Photo" title="${employee.name.first} ${employee.name.last}">`;
-           employeeProfile += '<div class="cardText">';
-           employeeProfile +=  `<p class="employee">${employee.name.first} ${employee.name.last}</p>`;
-           employeeProfile += `<p class="email">${employee.email}</p>`;
-           employeeProfile += `<p class="city">${employee.location.city}</p>`;
-           employeeProfile += '</div>';
-           employeeProfile += '</div>';
-           employeeProfile += '</a>';
-           employeeProfile += '</li>';
-           return employeeProfile;
-        });
+    profileCards = employees.map(employee => {
+       employeeProfile = '';
+       employeeProfile += '<li class="employeeCard">';
+       employeeProfile += `<a href="#${employee.name.last}">`;
+       employeeProfile += '<div class="card">';
+       employeeProfile += `<img src=${employee.picture.large} class="cardPhoto" alt="Employee Photo" title="${employee.name.first} ${employee.name.last}">`;
+       employeeProfile += '<div class="cardText">';
+       employeeProfile +=  `<p class="employee">${employee.name.first} ${employee.name.last}</p>`;
+       employeeProfile += `<p class="email">${employee.email}</p>`;
+       employeeProfile += `<p class="city">${employee.location.city}</p>`;
+       employeeProfile += '</div>';
+       employeeProfile += '</div>';
+       employeeProfile += '</a>';
+       employeeProfile += '</li>';
+       return employeeProfile;
+    });
 
-     profileCards.map(card =>  ul.append(card));
-     //----Declaring Card Elements-----//
-     card = $('.card');
-     cardText = $('.cardText');
-     profileCards = $('li.employeeCard');
+ profileCards.map(card =>  ul.append(card));
+ //----Declaring Card Elements-----//
+ card = $('.card');
+ cardText = $('.cardText');
+ profileCards = $('li.employeeCard');
 
 }
 
@@ -208,8 +208,9 @@ function expandText(data) {
 
 //-------Open Lightbox on click of profile card------//
 
-ul.on('click', 'li', function(e) {
-        currentIndex = $('li').index(this);
+ul.on('click', 'li', function (e) {
+  
+        currentIndex = $(this).index();
         cardExpand.html(cardExpandText[currentIndex]);
         counter.html(currentIndex + 1);
         closeButton = $('.close')[0];

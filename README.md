@@ -19,5 +19,5 @@ This ASP.NET MVC Web Application is a work in progress, it currently includes an
 - [ ] Settings Widget
 - [ ] Email Widget
 - [X] Modal Window Styling
-- [ ] Fix Modal Window Index issue
+- [X] Fix Modal Window Index issue
 - [ ] Local Storage for Preferences
